@@ -23,9 +23,10 @@
             <button
                 type="button"
                 wire:click="editItem('{{ $statePath }}')"
-                class="appearance-none px-3 py-2 text-left"
+                class="appearance-none px-3 py-2 flex items-center justify-between w-full"
             >
                 <span>{{ $item['label'] }}</span>
+                <span class="text-sm text-gray-500">{{ $item['type'] }}</span>
             </button>
 
             @if(count($item['children']) > 0)
