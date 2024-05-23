@@ -14,7 +14,7 @@ return [
 
     'select-options' => [
         'same-tab' => 'Этой вкладке',
-        'new-tab' => 'Новой вкладке'
+        'new-tab' => 'Новой вкладке',
     ],
 
     'items' => [
@@ -25,7 +25,7 @@ return [
         'move-down' => 'Переместить ниже',
         'indent' => 'Indent',
         'dedent' => 'Dedent',
-        'remove' => 'Удалить'
+        'remove' => 'Удалить',
     ],
 
     'items-modal' => [

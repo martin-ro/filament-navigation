@@ -8,7 +8,7 @@ use RyanChandler\FilamentNavigation\FilamentNavigation;
 
 class EditNavigation extends EditRecord
 {
-    use HandlesNavigationBuilder;
+    use EditRecord\Concerns\Translatable, HandlesNavigationBuilder;
 
     public static function getResource(): string
     {

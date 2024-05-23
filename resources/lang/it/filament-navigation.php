@@ -15,7 +15,7 @@ return [
 
     'select-options' => [
         'same-tab' => 'Stessa scheda',
-        'new-tab' => 'Nuova scheda'
+        'new-tab' => 'Nuova scheda',
     ],
 
     'items' => [
@@ -26,7 +26,7 @@ return [
         'move-down' => 'Sposta giù',
         'indent' => 'Aumenta rientro',
         'dedent' => 'Riduci rientro',
-        'remove' => 'Rimuovi'
+        'remove' => 'Rimuovi',
     ],
 
     'items-modal' => [

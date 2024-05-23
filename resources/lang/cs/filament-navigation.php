@@ -10,11 +10,11 @@ return [
         'handle' => 'Identifikátor',
         'created_at' => 'Vytvořeno',
         'updated_at' => 'Upraveno',
-     ],
+    ],
 
     'select-options' => [
         'same-tab' => 'Ve stejném okně',
-        'new-tab' => 'V novém okně'
+        'new-tab' => 'V novém okně',
     ],
 
     'items' => [
@@ -25,7 +25,7 @@ return [
         'move-down' => 'Posunout dolu',
         'indent' => 'Přidružit',
         'dedent' => 'Oddělit',
-        'remove' => 'Odstranit'
+        'remove' => 'Odstranit',
     ],
 
     'items-modal' => [

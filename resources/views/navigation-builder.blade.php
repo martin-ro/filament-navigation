@@ -17,16 +17,18 @@
             })"
             data-sortable-container
         >
-            @forelse($getState() as $uuid => $item)
-                <x-filament-navigation::nav-item :statePath="$getStatePath() . '.' . $uuid" :item="$item" />
-            @empty
+            @if(is_iterable($getState()) && !empty($getState()))
+                @foreach($getState() as $uuid => $item)
+                    <x-filament-navigation::nav-item :statePath="$getStatePath() . '.' . $uuid" :item="$item" />
+                @endforeach
+            @else
                 <div @class([
-                    'w-full bg-white rounded-lg border border-gray-300 px-3 py-2 text-left',
-                    'dark:bg-gray-700 dark:border-gray-600',
-                ])>
+                        'w-full bg-white rounded-lg border border-gray-300 px-3 py-2 text-left',
+                        'dark:bg-gray-700 dark:border-gray-600',
+                    ])>
                     {{__('filament-navigation::filament-navigation.items.empty')}}
                 </div>
-            @endforelse
+            @endif
         </div>
     </div>
 

@@ -11,11 +11,11 @@ return [
         'created_at' => 'Erstellt',
         'updated_at' => 'Geändert',
 
-     ],
+    ],
 
     'select-options' => [
         'same-tab' => 'Gleicher Tab',
-        'new-tab' => 'Neuer Tab'
+        'new-tab' => 'Neuer Tab',
     ],
 
     'items' => [
@@ -26,7 +26,7 @@ return [
         'move-down' => 'Nach unten verschieben',
         'indent' => 'Einziehen',
         'dedent' => 'Ausziehen',
-        'remove' => 'Entfernen'
+        'remove' => 'Entfernen',
     ],
 
     'items-modal' => [

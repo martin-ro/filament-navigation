@@ -4,6 +4,7 @@ namespace RyanChandler\FilamentNavigation\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * @property string $handle
@@ -13,13 +14,15 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Navigation extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
 
     protected $guarded = [];
 
     protected $casts = [
         'items' => 'json',
     ];
+
+    public array $translatable = ['items'];
 
     public static function fromHandle(string $handle): ?static
     {

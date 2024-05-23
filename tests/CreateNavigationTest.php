@@ -2,12 +2,10 @@
 
 use Livewire\Livewire;
 use Pest\Expectation;
+use RyanChandler\FilamentNavigation\Filament\Resources\NavigationResource\Pages\CreateNavigation;
+use RyanChandler\FilamentNavigation\Models\Navigation;
 
 use function Pest\Laravel\assertDatabaseHas;
-
-use RyanChandler\FilamentNavigation\Filament\Resources\NavigationResource\Pages\CreateNavigation;
-
-use RyanChandler\FilamentNavigation\Models\Navigation;
 
 it('can create a navigation menu', function () {
     Livewire::test(CreateNavigation::class)
@@ -42,13 +40,13 @@ it('can create a navigation menu with items', function () {
         ->name->toBe('Foo')
         ->handle->toBe('foo')
         ->items
-            ->toHaveLength(1)
-            ->sequence(
-                fn (Expectation $item) => $item
-                    ->toHaveKey('label', 'Bar')
-                    ->toHaveKey('type', 'external-link')
-                    ->data->toMatchArray([
-                        'url' => '/bar',
-                    ])
-            );
+        ->toHaveLength(1)
+        ->sequence(
+            fn (Expectation $item) => $item
+                ->toHaveKey('label', 'Bar')
+                ->toHaveKey('type', 'external-link')
+                ->data->toMatchArray([
+                    'url' => '/bar',
+                ])
+        );
 })->skip();

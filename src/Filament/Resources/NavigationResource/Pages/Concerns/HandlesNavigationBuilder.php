@@ -3,6 +3,7 @@
 namespace RyanChandler\FilamentNavigation\Filament\Resources\NavigationResource\Pages\Concerns;
 
 use Filament\Actions\Action;
+use Filament\Actions\LocaleSwitcher;
 use Filament\Forms\ComponentContainer;
 use Filament\Forms\Components\Component;
 use Filament\Forms\Components\Group;
@@ -72,6 +73,8 @@ trait HandlesNavigationBuilder
     protected function getActions(): array
     {
         return [
+            LocaleSwitcher::make(),
+
             Action::make('item')
                 ->mountUsing(function (ComponentContainer $form) {
                     if (! $this->mountedItem) {
@@ -130,17 +133,21 @@ trait HandlesNavigationBuilder
                         $this->mountedItem = null;
                         $this->mountedItemData = [];
                     } elseif ($this->mountedChildTarget) {
-                        $children = data_get($this, $this->mountedChildTarget . '.children', []);
+                        $children = data_get($this, $this->mountedChildTarget.'.children', []);
 
                         $children[(string) Str::uuid()] = [
                             ...$data,
                             ...['children' => []],
                         ];
 
-                        data_set($this, $this->mountedChildTarget . '.children', $children);
+                        data_set($this, $this->mountedChildTarget.'.children', $children);
 
                         $this->mountedChildTarget = null;
                     } else {
+                        if (! is_array($this->data['items'])) {
+                            $this->data['items'] = [];
+                        }
+
                         $this->data['items'][(string) Str::uuid()] = [
                             ...$data,
                             ...['children' => []],

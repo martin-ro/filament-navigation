@@ -19,7 +19,7 @@ class FilamentNavigation implements Plugin
 
     protected array $itemTypes = [];
 
-    protected array | Closure $extraFields = [];
+    protected array|Closure $extraFields = [];
 
     public function getId(): string
     {
@@ -42,7 +42,7 @@ class FilamentNavigation implements Plugin
         return $this;
     }
 
-    public function itemType(string $name, array | Closure $fields, ?string $slug = null): static
+    public function itemType(string $name, array|Closure $fields, ?string $slug = null): static
     {
         $this->itemTypes[$slug ?? Str::slug($name)] = [
             'name' => $name,
@@ -52,7 +52,7 @@ class FilamentNavigation implements Plugin
         return $this;
     }
 
-    public function withExtraFields(array | Closure $schema): static
+    public function withExtraFields(array|Closure $schema): static
     {
         $this->extraFields = $schema;
 
@@ -90,7 +90,7 @@ class FilamentNavigation implements Plugin
         return $this->resource;
     }
 
-    public function getExtraFields(): array | Closure
+    public function getExtraFields(): array|Closure
     {
         return $this->extraFields;
     }

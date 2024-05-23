@@ -11,11 +11,11 @@ return [
         'created_at' => 'Aangemaakt op',
         'updated_at' => 'Aangepast op',
 
-     ],
+    ],
 
     'select-options' => [
         'same-tab' => 'Dezelfde tab',
-        'new-tab' => 'Nieuwe tab'
+        'new-tab' => 'Nieuwe tab',
     ],
 
     'items' => [
@@ -26,7 +26,7 @@ return [
         'move-down' => 'Verplaats omlaag',
         'indent' => 'Inspringen',
         'dedent' => 'Terugspringen',
-        'remove' => 'Verwijderen'
+        'remove' => 'Verwijderen',
     ],
 
     'items-modal' => [
